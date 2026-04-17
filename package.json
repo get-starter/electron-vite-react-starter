@@ -1,0 +1,32 @@
+{
+  "name": "electron-app",
+  "private": true,
+  "version": "0.0.0",
+  "type": "module",
+  "main": ".dist/electron/main.js",
+  "scripts": {
+    "dev": "conc \"vite\" \"tsup --watch\" \"electron .\"",
+    "build": "conc \"tsc -b\" \"vite build\" \"tsup\"",
+    "preview": "conc \"vite preview\" \"electron .\"",
+    "release": "electron-builder --config builder.config.ts"
+  },
+  "dependencies": {
+    "react": "^19.2.4",
+    "react-dom": "^19.2.4"
+  },
+  "devDependencies": {
+    "electron": "^41.2.1",
+    "@types/node": "^24.12.2",
+    "@types/react": "^19.2.14",
+    "@types/react-dom": "^19.2.3",
+    "@vitejs/plugin-react": "^6.0.1",
+    "concurrently": "^9.2.1",
+    "electron-builder": "^26.8.1",
+    "globals": "^17.4.0",
+    "tsup": "^8.5.1",
+    "tsx": "^4.21.0",
+    "typescript": "~6.0.2",
+    "vite": "^8.0.4",
+    "wait-on": "^9.0.5"
+  }
+}
