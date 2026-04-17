@@ -5,7 +5,7 @@ import { fileURLToPath } from "node:url";
 const __filename = fileURLToPath(import.meta.url);
 const __dirname = path.dirname(__filename);
 
-const isDev = !app.isPackaged;
+const isDev = !app.isPackaged || process.env.NODE_ENV === "development";
 
 function createWindow(): void {
   const win = new BrowserWindow({
@@ -42,7 +42,6 @@ app.whenReady().then(() => {
   createWindow();
 });
 
-
 app.on("activate", () => {
   if (BrowserWindow.getAllWindows().length === 0) {
     createWindow();
@@ -54,3 +53,9 @@ app.on("window-all-closed", () => {
     app.quit();
   }
 });
+
+if (isDev) {
+  process.on("SIGTERM", () => {
+    app.quit();
+  });
+}

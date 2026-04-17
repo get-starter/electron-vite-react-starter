@@ -2,11 +2,7 @@ import { defineConfig } from "vite";
 import react from "@vitejs/plugin-react";
 
 // https://vite.dev/config/
-export default defineConfig(async ({ command, mode }) => {
-  if (mode === "electron") {
-    return {};
-  }
-  /// react
+export default defineConfig(async () => {
   return {
     plugins: [react()],
     base: "./",
@@ -14,8 +10,6 @@ export default defineConfig(async ({ command, mode }) => {
       outDir: ".dist/app",
       emptyOutDir: true,
     },
-    preview: {
-      port: 5173,
-    },
+    preview: { port: 5173 },
   };
 });

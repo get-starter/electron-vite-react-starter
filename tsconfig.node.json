@@ -6,6 +6,7 @@
     "module": "esnext",
     "types": ["node"],
     "skipLibCheck": true,
+    "strict": true,
 
     /* Bundler mode */
     "moduleResolution": "bundler",
@@ -15,10 +16,11 @@
     "noEmit": true,
 
     /* Linting */
-    // "noUnusedLocals": true,
-    // "noUnusedParameters": true,
-    // "erasableSyntaxOnly": true,
-    // "noFallthroughCasesInSwitch": true
+    "noUnusedLocals": true,
+    "noUnusedParameters": true,
+    "erasableSyntaxOnly": true,
+    "noFallthroughCasesInSwitch": true
   },
-  "include": ["vite.config.ts"]
+  "include": ["vite.config.ts", "electron/**/*.ts", "tsup.config.ts"],
+  "exclude": ["node_modules", ".dist", ".release", "app"]
 }

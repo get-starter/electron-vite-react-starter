@@ -5,7 +5,7 @@
   "type": "module",
   "main": ".dist/electron/main.js",
   "scripts": {
-    "dev": "conc \"vite\" \"tsup --watch\" \"electron .\"",
+    "dev": "conc \"vite\" \"tsup --watch\"",
     "build": "conc \"tsc -b\" \"vite build\" \"tsup\"",
     "preview": "conc \"vite preview\" \"electron .\"",
     "release": "electron-builder --config builder.config.ts"
@@ -22,11 +22,9 @@
     "@vitejs/plugin-react": "^6.0.1",
     "concurrently": "^9.2.1",
     "electron-builder": "^26.8.1",
-    "globals": "^17.4.0",
     "tsup": "^8.5.1",
     "tsx": "^4.21.0",
     "typescript": "~6.0.2",
-    "vite": "^8.0.4",
-    "wait-on": "^9.0.5"
+    "vite": "^8.0.4"
   }
 }
